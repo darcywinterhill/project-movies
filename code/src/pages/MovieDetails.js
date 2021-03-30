@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 
-/* import { MOVIE_URL } from 'reusables/urls' */
-const API_KEY = 'e90c1322becf61268c0c0fea570c7099';
+import { MOVIE_URL } from '../reusables/urls'
 
 export const MovieDetails = () => {
 
   const {id} = useParams();
-  // const {title} = useParams();
   const [movie, setMovie] = useState([])
 
   useEffect(() => {
-    // fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1${title}`)
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1${id}`)
+    fetch(`${MOVIE_URL}/movies/${id}`)
     .then((res) => res.json())
     .then((json) => {
         setMovie(json.results)
@@ -21,15 +18,23 @@ export const MovieDetails = () => {
 }, [id])
 
   return (
-    <section>
+    <article className='detail-page'>
+{/*         <a className='back-button'>
+            <i className="fas fa-chevron-circle-left"></i>
+            <p>Movies</p>
+        </a> */}
+
         {movie.map((details) => (
-      <div key ={details.title}>
-      <h2>{details.title}</h2>
-      <h3>{details.vote_average}</h3>
-      <p>{details.overview}</p>
-      </div>
+        <div className='summary' key ={details.title}>
+            <img src={`https://image.tmdb.org/t/p/w342${details.poster_path}`} alt={details.title}></img>
+            <div>
+                <h1>{details.title}<span className='rating'>{details.vote_average}/10</span></h1>
+                <p>{details.overview}</p>
+            </div>
+        </div>
         ))}
-    </section>
+
+    </article>
 
   )
 }
