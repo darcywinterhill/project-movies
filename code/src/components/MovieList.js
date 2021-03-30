@@ -4,7 +4,6 @@ import { MovieCard } from './MovieCard'
 
 import { MOVIE_URL } from '../reusables/urls'
 
-
 export const MovieList = () => {
 
     const [movies, setMovies] = useState([])

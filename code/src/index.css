@@ -86,7 +86,6 @@ body {
   top: 50px;
   left: 50px;
   font-weight: 700;
-
 }
 
 i {
@@ -101,7 +100,6 @@ i {
 
 .back-button:hover p {
   right: -4px;
-
 }
 
 .detail-page img {
