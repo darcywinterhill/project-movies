@@ -12,10 +12,10 @@ export const App = () => {
       <Switch>
         <Route path='/' exact>
           <MovieList />
-        </Route>     
-        <Route path='/movies/:title' exact>
+        </Route>
+        <Route path='/movie/:id'>
           <MovieDetails />
-        </Route>      
+        </Route>
       </Switch>
     </BrowserRouter>
     </div>

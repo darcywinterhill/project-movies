@@ -14,6 +14,7 @@ code {
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   background-color: #000;
+  margin: 0;
 }
 
 .main a {
@@ -44,7 +46,7 @@ body {
   left: 0;
   right: 0;
   background: rgba(0,0,0,.75);
-  display: none; 
+  display: none;
   padding: 20px;
 }
 
@@ -64,6 +66,16 @@ body {
 
 .detail-page {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.background{
+  display: flex;
+  min-height:100vh;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .back-button {
@@ -78,7 +90,6 @@ body {
 
 .detail-page img {
   border: solid 5px #fff;
-  margin-right: 20px;
 }
 
 .detail-page .summary {
@@ -92,6 +103,10 @@ body {
   font-size: 17px;
   font-weight: 400;
   margin-left: 10px;
+}
+
+.movie-details {
+  margin-left: 20px;
 }
 
 .detail-page p {
