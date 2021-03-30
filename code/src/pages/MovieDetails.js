@@ -7,12 +7,12 @@ export const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState([])
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e90c1322becf61268c0c0fea570c7099&language=en-US&page=1`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e90c1322becf61268c0c0fea570c7099&language=en-US`)
     .then((res) => res.json())
     .then((json) => setMovieDetails(json))
     .catch(err => console.error(err))
 }, [id])
-
+/* &page=1 */
 
   return (
     <article className='detail-page'>
@@ -21,7 +21,7 @@ export const MovieDetails = () => {
             <i className="fas fa-chevron-circle-left"></i>
             <p>Movies</p>
         </Link>
-        <div className='background' style={{backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})` }}>
+        <div className='background' style={{backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})` }} alt={movieDetails.title}>
           <div className='summary'>
             <img src={`https://image.tmdb.org/t/p/w342${movieDetails.poster_path}`} alt={movieDetails.title}></img>
             <div className='movie-details'>
