@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 /* import { MOVIE_URL } from '../reusables/urls' */
 // import { DETAILS_URL } from '../reusables/urls'
@@ -21,10 +21,11 @@ export const MovieDetails = () => {
 
   return (
     <article className='detail-page'>
-        <a className='back-button'>
+
+        <Link to='/' className='back-button'>
             <i className="fas fa-chevron-circle-left"></i>
             <p>Movies</p>
-        </a>
+        </Link>
         <div className='background' style={{backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://image.tmdb.org/t/p/original${movieDetails.backdrop_path})` }}>
         <div className='summary'>
             <img src={`https://image.tmdb.org/t/p/w342${movieDetails.poster_path}`} alt={movieDetails.title}></img>
