@@ -12,7 +12,6 @@ export const MovieDetails = () => {
     .then((json) => setMovieDetails(json))
     .catch(err => console.error(err))
 }, [id])
-/* &page=1 */
 
   return (
     <article className='detail-page'>
