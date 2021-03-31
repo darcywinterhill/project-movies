@@ -84,11 +84,12 @@ body {
   height:100vh;
 }
 
-.back-button {
+.detail-page .back-button {
   display: inline-flex;
   align-items: center;
 
   position: absolute;
+  width: 50px;
   top: 50px;
   left: 50px;
   font-weight: 700;
@@ -101,7 +102,7 @@ i {
 
 .back-button p {
   position: relative;
-  transition: all 5s ease;
+  transition: all 0.2s ease;
   margin-left: 3px;
 }
 
