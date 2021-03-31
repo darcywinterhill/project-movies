@@ -19,6 +19,7 @@ code {
 
 body {
   color: #fff;
+  background-color:#000;
 }
 
 .main {
@@ -89,7 +90,7 @@ body {
   align-items: center;
 
   position: absolute;
-  width: 50px;
+  width: 90px;
   top: 50px;
   left: 50px;
   font-weight: 700;
@@ -107,7 +108,7 @@ i {
 }
 
 .back-button:hover p {
-  right: -4px;
+  margin-left: 6px;
 }
 
 .detail-page img {
@@ -136,18 +137,74 @@ i {
   margin: 16px 0;
 }
 
-@media (max-width: 666px) {
+@media (max-width: 766px) {
 
   .main a {
+    width: 50%;
+  }
+
+  .detail-page {
+    height: 100%;
+  }
+
+  .detail-page .back-button {
+    position:absolute;
+    top: 30px;
+    left: 20px;
+  }
+
+  .detail-page .summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    position: absolute;
+    top: 80px;
     width: 100%;
+  }
+
+  .detail-page img {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .detail-page .movie-details {
+    margin: auto;
+    width: 80%;
+  }
+
+  .detail-page .background {
+    display: flex;
+    justify-content: center;
+
+    background-image: none !important;
+    background-color: #000;
+    height: 100%;
   }
 
 }
 
-@media (min-width: 667px) and (max-width: 1023px) {
+@media (max-width: 1025px) {
 
   .main a {
     width: 50%;
+  }
+
+  .detail-page .summary {
+    justify-content: center;
+  }
+
+  .detail-page img {
+    width: 80%;
+  }
+
+  .detail-page .background {
+    display: flex;
+    justify-content: center;
+
+    background-image: none !important;
+    background-color: #000;
+    height: 100vh;
   }
 
 }

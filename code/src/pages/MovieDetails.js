@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 export const MovieDetails = () => {
 
   const {id} = useParams();
-  const [movieDetails, setMovieDetails] = useState([])
+  const [movieDetails, setMovieDetails] = useState()
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e90c1322becf61268c0c0fea570c7099&language=en-US`)
@@ -13,6 +13,10 @@ export const MovieDetails = () => {
     .catch(err => console.error(err))
 }, [id])
 
+if (movieDetails === undefined) {
+  return <></>
+}
+
   return (
     <article className='detail-page'>
 
@@ -20,6 +24,7 @@ export const MovieDetails = () => {
             <i className="fas fa-chevron-circle-left"></i>
             <p>Movies</p>
         </Link>
+
         <div className='background' style={{backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})` }} alt={movieDetails.title}>
           <div className='summary'>
             <img src={`https://image.tmdb.org/t/p/w342${movieDetails.poster_path}`} alt={movieDetails.title}></img>
@@ -29,6 +34,7 @@ export const MovieDetails = () => {
             </div>
           </div>
         </div>
+
     </article>
 
   )
