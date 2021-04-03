@@ -105,10 +105,11 @@ i {
   position: relative;
   transition: all 0.2s ease;
   margin-left: 3px;
+  padding-left: 0;
 }
 
 .back-button:hover p {
-  margin-left: 6px;
+ padding-left: 3px;
 }
 
 .detail-page img {
