@@ -14,7 +14,6 @@ export const MovieList = () => {
         .then(json => {
             setMovies(json.results)
         })
-        .catch(err => console.error(err))
     }, [])
 
     return (
