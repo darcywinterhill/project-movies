@@ -1,4 +1,4 @@
-A project during Technigo bootcamp.
+Project week 12 of Technigo bootcamp
 
 # Project Movies
 This was a pair programming project.
